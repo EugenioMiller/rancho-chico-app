@@ -9,15 +9,15 @@ use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * En este método llamo a todos
+     * los seeders que quiero invocar
      */
-    public function run(): void
-    {
-        // User::factory(10)->create();
+    public function run(): void {
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        //Invoco los seeders en el arreglo
+        $this->call([
+            RolSeeder::class,
+            UserSeeder:: class,
         ]);
     }
 }
