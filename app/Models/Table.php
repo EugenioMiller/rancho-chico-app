@@ -13,4 +13,10 @@ class Table extends Model
         'number',
         'taken',
     ];
+
+    public function order() {
+        //Primer parámetro -> nombre de la FK
+        //Segundo parámetro -> nombre de la PK
+        return $this->hasOne(User::class, 'fk_table', 'id_table');
+    }
 }

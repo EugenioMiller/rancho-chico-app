@@ -49,4 +49,8 @@ class User extends Authenticatable
     public function rol(){
         return $this->belongsTo(Rol::class);
     }
+
+    public function orders(){
+        return $this->hasMany(Order::class, 'fk_user', 'id_user');
+    }
 }
