@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Rol extends Model
+class Type extends Model
 {
     use HasFactory;
 
@@ -13,9 +13,9 @@ class Rol extends Model
         'name',
     ];
 
-    public function user() {
+    public function dish() {
         //Primer parámetro -> nombre de la FK
         //Segundo parámetro -> nombre de la PK
-        return $this->hasOne(User::class, 'fk_rols', 'id_rol');
+        return $this->hasOne(User::class, 'fk_type', 'id_type');
     }
 }
